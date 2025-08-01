@@ -1,2 +1,271 @@
-# A.EDUCATIONS_
 WELCOME TO A.EDUCATIONS
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>A.EDUCATIONS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  <style>
+    :root {
+      --bg: linear-gradient(to right, #f5f7fa, #c3cfe2);
+      --header-bg: rgba(255, 255, 255, 0.3);
+      --text-color: #111;
+      --tagline-color: #333;
+      --content-bg: #f9f9f9;
+      --border-color: #ccc;
+      --footer-bg: #222;
+      --footer-color: white;
+    }
+
+    body.dark {
+      --bg: linear-gradient(to right, #1e1e1e, #2b2b2b);
+      --header-bg: rgba(40, 40, 40, 0.6);
+      --text-color: #eee;
+      --tagline-color: #bbb;
+      --content-bg: #2e2e2e;
+      --border-color: #555;
+      --footer-bg: #111;
+      --footer-color: #ccc;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg);
+      color: var(--text-color);
+      transition: background 0.5s, color 0.5s;
+    }
+
+    header {
+      background: var(--header-bg);
+      backdrop-filter: blur(10px);
+      text-align: center;
+      padding: 2rem 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .shine {
+      position: absolute;
+      top: 0; left: -75%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(120deg, rgba(255,255,255,0.2), rgba(255,255,255,0.6), rgba(255,255,255,0.2));
+      transform: skewX(-20deg);
+      animation: shineAnim 4s infinite;
+      pointer-events: none;
+    }
+
+    @keyframes shineAnim {
+      0% { left: -75%; }
+      100% { left: 125%; }
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: var(--text-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .tagline {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.2rem;
+      color: var(--tagline-color);
+    }
+
+    .settings-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: transparent;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--text-color);
+      cursor: pointer;
+    }
+
+    .mode-toggle {
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background: #444;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      z-index: 10;
+    }
+
+    .mode-toggle.show { display: block; }
+
+    .button-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 1rem;
+    }
+
+    .toggle-button {
+      background: linear-gradient(145deg, #007bff, #0056b3);
+      color: white;
+      padding: 0.7rem 1rem;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      border: none;
+      flex: 1 1 45%;
+      min-width: 120px;
+      text-align: center;
+    }
+
+    .toggle-button.active {
+      background: linear-gradient(145deg, #28a745, #218838);
+      box-shadow: 0 0 10px #28a745;
+    }
+
+    .content {
+      display: none;
+      max-width: 90%;
+      margin: 0 auto 1rem;
+      padding: 1rem;
+      background: var(--content-bg);
+      border-radius: 10px;
+      border: 1px solid var(--border-color);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: var(--footer-bg);
+      color: var(--footer-color);
+    }
+
+    /* Entry Animation */
+    #intro-logo {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: radial-gradient(ellipse at center, #ffffff, #d1d1d1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 99999;
+      animation: fadeOut 2s 3s forwards;
+    }
+
+    .logo-char {
+      font-size: 120px;
+      font-weight: bold;
+      color: #007bff;
+      text-shadow: 0 0 20px #007bff, 0 0 40px #0056b3;
+      animation: pulseGlow 2s infinite;
+    }
+
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% {
+        text-shadow: 0 0 20px #007bff, 0 0 40px #0056b3;
+      }
+      50% {
+        text-shadow: 0 0 10px #007bff, 0 0 20px #0056b3;
+      }
+    }
+
+    @media (max-width: 500px) {
+      h1 { font-size: 2rem; }
+      .tagline { font-size: 1rem; }
+      .toggle-button { font-size: 0.85rem; padding: 0.6rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Entry Animation -->
+  <div id="intro-logo">
+    <span class="logo-char">A</span>
+  </div>
+
+  <header>
+    <h1>A.EDUCATIONS</h1>
+    <div class="shine"></div>
+    <p class="tagline">Flip and turn until it's learnt</p>
+    <button class="settings-toggle" onclick="toggleModeButton()"><i class="fas fa-cog"></i></button>
+    <button class="mode-toggle" onclick="toggleMode()">Toggle Mode</button>
+  </header>
+
+  <section>
+    <div class="button-container">
+      <button class="toggle-button" onclick="toggleSection('jee-neet')">JEE / NEET</button>
+      <button class="toggle-button" onclick="toggleSection('nursery-10')">Nursery to 10th</button>
+      <button class="toggle-button" onclick="toggleSection('11-12')">11th & 12th</button>
+      <button class="toggle-button" onclick="toggleSection('pyq')">PYQ</button>
+      <button class="toggle-button" onclick="toggleSection('about')">About</button>
+      <button class="toggle-button" onclick="toggleSection('services')">Services</button>
+      <button class="toggle-button" onclick="toggleSection('rates')">Rates</button>
+      <button class="toggle-button" onclick="toggleSection('contact')">Contact</button>
+    </div>
+
+    <div class="content" id="jee-neet">
+      <ul>
+        <li>✔ Full preparation courses</li>
+        <li>✔ Chapter-wise modules</li>
+        <li>✔ Mock tests and doubt-clearing sessions</li>
+      </ul>
+    </div>
+    <div class="content" id="nursery-10">
+      <ul>
+        <li>✔ All courses aligned with latest syllabus</li>
+        <li>✔ 24/7 Doubt solving</li>
+        <li>✔ All boards available</li>
+      </ul>
+    </div>
+    <div class="content" id="11-12">
+      <ul>
+        <li>✔ All Streams: PDFs and PYQs available</li>
+        <li>✔ Solved papers and courses</li>
+        <li>✔ All major boards covered</li>
+      </ul>
+    </div>
+    <div class="content" id="pyq"><p>Past year questions – downloadable and filterable.</p></div>
+    <div class="content" id="about"><p>We believe learning should feel like discovery, not stress.</p></div>
+    <div class="content" id="services"><p>Personal coaching, live classes, recorded lectures, mocks.</p></div>
+    <div class="content" id="rates"><p>₹500/month (Nursery–10), ₹800 (11-12), ₹15k/year (JEE/NEET)</p></div>
+    <div class="content" id="contact">
+      <h2>Contact Me</h2>
+      <button onclick="window.open('mailto:adityacharak14@gmail.com')">📧 Email</button>
+      <button onclick="window.open('https://www.instagram.com/ya__services', '_blank')">📸 Instagram</button>
+      <button onclick="window.open('https://wa.me/9469264220', '_blank')">💬 WhatsApp</button>
+    </div>
+  </section>
+
+  <footer>© 2025 A.EDUCATIONS. All Rights Reserved. Powered by faith & effort.</footer>
+
+  <script>
+    function toggleSection(id) {
+      const contents = document.querySelectorAll('.content');
+      const buttons = document.querySelectorAll('.toggle-button');
+      contents.forEach(c => c.style.display = 'none');
+      buttons.forEach(b => b.classList.remove('active'));
+      document.getElementById(id).style.display = 'block';
+      document.querySelector(`.toggle-button[onclick*="${id}"]`).classList.add('active');
+    }
+
+    function toggleMode() {
+      document.body.classList.toggle('dark');
+    }
+
+    function toggleModeButton() {
+      document.querySelector('.mode-toggle').classList.toggle('show');
+    }
+  </script>
+</body>
+</html>
